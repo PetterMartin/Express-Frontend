@@ -24,7 +24,7 @@ export default function App() {
       </div>
       <div className="flex justify-center items-center w-full">
         <div className="mt-12">
-          <div className="flex">
+          <div className="flex justify-between">
             <CreateUserForm onUserCreated={handleUserCreated} />
             <CreateProductForm onProductCreated={handleProductCreated} />
           </div>

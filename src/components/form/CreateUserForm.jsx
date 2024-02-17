@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPlusCircle } from "react-icons/fa";
 
 function CreateUserForm({ onUserCreated }) {
   const [username, setUsername] = useState("");
@@ -9,13 +10,16 @@ function CreateUserForm({ onUserCreated }) {
     event.preventDefault();
 
     try {
-      const response = await fetch("https://express-hosting.onrender.com/api/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, displayName, password }),
-      });
+      const response = await fetch(
+        "https://express-hosting.onrender.com/api/users",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, displayName, password }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to create user");
@@ -32,7 +36,7 @@ function CreateUserForm({ onUserCreated }) {
   };
 
   return (
-    <>
+    <div>
       <h1 className="text-2xl text-green-400">Create User</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -65,9 +69,15 @@ function CreateUserForm({ onUserCreated }) {
             style={{ backgroundColor: "transparent" }}
           />
         </div>
-        <button type="submit" className="bg-green-800 border-2 border-green-400 rounded-md text-white font-bold px-4 mt-2 hover:bg-green-900 hover:border-green-600">CREATE USER</button>
+        <button
+          type="submit"
+          className="bg-green-800 border-2 border-green-400 rounded-md text-white font-bold px-4 mt-2 hover:bg-green-900 hover:border-green-600 flex items-center justify-center"
+        >
+          <FaPlusCircle className="mr-2" />
+          CREATE USER
+        </button>
       </form>
-    </>
+    </div>
   );
 }
 
