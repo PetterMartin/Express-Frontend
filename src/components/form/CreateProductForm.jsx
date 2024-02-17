@@ -36,8 +36,8 @@ function CreateProductForm({ onProductCreated }) {
 
   return (
     <div>
-      <h1 className="text-2xl text-green-400">Create Product</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="text-2xl text-green-400 text-center mb-4 border-b-2 border-green-500 pb-2">Create Product</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <div>
           <label htmlFor="title">Title:</label>
           <input
@@ -46,6 +46,7 @@ function CreateProductForm({ onProductCreated }) {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             style={{ backgroundColor: "transparent" }}
+            className="border ms-2 border-gray-600 rounded-md"
           />
         </div>
         <div>
@@ -56,11 +57,12 @@ function CreateProductForm({ onProductCreated }) {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             style={{ backgroundColor: "transparent" }}
+            className="border ms-2 border-gray-600 rounded-md"
           />
         </div>
         <button
           type="submit"
-          className="bg-green-800 border-2 border-green-400 rounded-md text-white font-bold px-4 mt-8 hover:bg-green-900 hover:border-green-600 flex items-center justify-center"
+          className="bg-green-800 border-2 border-green-400 rounded-md text-white font-bold px-4 mt-10 hover:bg-green-900 hover:border-green-600 flex items-center justify-center"
         >
           <FaPlusCircle className="mr-2" />
           CREATE PRODUCT

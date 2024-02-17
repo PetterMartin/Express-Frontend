@@ -37,8 +37,8 @@ function CreateUserForm({ onUserCreated }) {
 
   return (
     <div>
-      <h1 className="text-2xl text-green-400">Create User</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="text-2xl text-green-400 text-center mb-4 border-b-2 border-green-500 pb-2">Create User</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <div>
           <label htmlFor="username">Username:</label>
           <input
@@ -47,6 +47,7 @@ function CreateUserForm({ onUserCreated }) {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             style={{ backgroundColor: "transparent" }}
+            className="border ms-2 border-gray-600 rounded-md"
           />
         </div>
         <div>
@@ -57,6 +58,7 @@ function CreateUserForm({ onUserCreated }) {
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
             style={{ backgroundColor: "transparent" }}
+            className="border ms-2 border-gray-600 rounded-md"
           />
         </div>
         <div>
@@ -67,6 +69,7 @@ function CreateUserForm({ onUserCreated }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             style={{ backgroundColor: "transparent" }}
+            className="border ms-2 border-gray-600 rounded-md"
           />
         </div>
         <button
