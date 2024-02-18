@@ -27,7 +27,6 @@ function CreateProductForm({ onProductCreated }) {
       setTitle("");
       setDescription("");
 
-      // Call the onProductCreated function passed as a prop
       onProductCreated();
     } catch (error) {
       console.error(error);

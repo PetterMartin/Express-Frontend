@@ -38,14 +38,6 @@ function UsersList() {
                   <span className="text-green-400">&quot;{user.username}&quot;</span>
                 </div>
               </div>
-              <div className="flex gap-2">
-                <div className="flex items-center bg-gray-600 rounded-md border border-grray-600 py-1 px-2 cursor-pointer hover:bg-gray-500">
-                  <BiSolidPencil className="text-gray-100" />
-                </div>
-                <div className="flex items-center bg-gray-600 rounded-md border border-grray-600 py-1 px-2 cursor-pointer hover:bg-gray-500">
-                  <FaTrash className="text-gray-100" />
-                </div>
-              </div>
             </div>
             <div>
               displayName :{" "}
