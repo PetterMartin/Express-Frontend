@@ -6,7 +6,6 @@ function UsersList() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        // Clear the users array
         setUsers([]);
         const response = await fetch("https://express-hosting.onrender.com/api/users");
         if (!response.ok) {
