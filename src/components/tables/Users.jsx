@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { BiSolidPencil } from "react-icons/bi";
-import { FaTrash } from "react-icons/fa6";
 
 function UsersList() {
   const [users, setUsers] = useState([]);
@@ -8,6 +6,8 @@ function UsersList() {
   useEffect(() => {
     async function fetchUsers() {
       try {
+        // Clear the users array
+        setUsers([]);
         const response = await fetch("https://express-hosting.onrender.com/api/users");
         if (!response.ok) {
           throw new Error("Failed to fetch users");
@@ -18,7 +18,7 @@ function UsersList() {
         console.error(error);
       }
     }
-
+  
     fetchUsers();
   }, []);
 
